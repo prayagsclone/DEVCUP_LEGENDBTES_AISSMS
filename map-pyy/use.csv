@@ -1,0 +1,20 @@
+district,lat,long,severity
+Thiruvananthapuram,8.525,76.924,low
+Kollam,8.882,76.607,high
+Pathanamthitta,9.264,76.786,high
+Alappuzha,9.492,76.332,med
+Kottayam,9.597,76.521,mild
+Idukki,9.829,76.93,mid
+Ernakulam,9.974,76.302,low
+Thrissur,10.546,76.18,mid
+Palakkad,10.803,76.67,low
+Cuttack,20.465,85.881,high
+Kelua river,20.775,86.191,large
+Bhubaneshwar,20.215,85.861,mid
+Bhuragaon,26.3977,92.248,low
+Mowamari,26.401,92.46,high
+Borjhar,26.128,91.56,most often
+Araria,26.139,87.468,frequent
+saharsa,25.905,86.574,low
+Supaul(fakirana),26.135,86.555,low
+Katihar,25.548,87.548,low
