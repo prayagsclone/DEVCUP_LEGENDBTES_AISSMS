@@ -1,1 +1,7 @@
-helo 
+team number:_ 16
+team name: legendbytes
+domain: smartcity 
+
+memebrs: prayag bhosale
+pratham pawale 
+upndra taral
