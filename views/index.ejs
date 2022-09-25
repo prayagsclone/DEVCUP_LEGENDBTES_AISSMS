@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    /* body {
+      font-family: Arial, Helvetica, sans-serif;
+      background-color: black;
+    } */
+
+    * {
+      box-sizing: border-box;
+    }
+
+    /* Add padding to containers */
+    .container {
+      padding: 16px;
+      background-color: white;
+    }
+
+    /* Full-width input fields */
+    input[type=text],
+    input[type=password] {
+      width: 100%;
+      padding: 15px;
+      margin: 5px 0 22px 0;
+      display: inline-block;
+      border: none;
+      background: #f1f1f1;
+    }
+
+    input[type=text]:focus,
+    input[type=password]:focus {
+      background-color: #ddd;
+      outline: none;
+    }
+
+    /* Overwrite default styles of hr */
+    hr {
+      border: 1px solid #f1f1f1;
+      margin-bottom: 25px;
+    }
+
+    /* Set a style for the submit button */
+    .registerbtn {
+      background-color: #04AA6D;
+      color: white;
+      padding: 16px 20px;
+      margin: 8px 0;
+      border: none;
+      cursor: pointer;
+      width: 40%;
+      opacity: 0.9;
+      margin-left: 30%;
+
+    }
+
+    .registerbtn:hover {
+      opacity: 1;
+    }
+
+    /* Add a blue text color to links */
+    a {
+      color: dodgerblue;
+    }
+
+    /* Set a grey background color and center the text of the "sign in" section */
+    .signin {
+      background-color: #f1f1f1;
+      text-align: center;
+    }
+  </style>
+</head>
+
+<body>
+
+  <form action="/" method="post">
+
+
+    <h1 style="color: green">
+      DEVCUP VIIT PROJECT
+    </h1>
+<br/>
+    <select id="mySelect11" onchange="myr1()" value="state" style="font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;font-size: 20px;margin-left:35%;width: 30%;">
+      <option>delhi</option>
+      <option>Maharashtra</option>
+      <option>delhi</option>
+      <option>odisha</option>
+    </select>
+<br/><br/><br/>
+    <select id="mySelect22" onchange="myr2()" style="font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;font-size: 20px;margin-left:35%;width: 30%;">
+      <option>Mumbai</option>
+      <option>Pune</option>
+      <option>Mumbai</option>
+      <option>Latur</option>
+    </select>
+<br/><br/><br/>
+    <select id="mySelect33" onchange="myr3()" style="font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;font-size: 20px;margin-left:35%;width: 30%;">
+      <option>karadi</option>
+      <option>kothrud</option>
+      <option>viman nagar</option>
+      <option>Berlin</option>
+
+    </select>
+
+<br/><br/><br/>
+
+    <button onclick="myr" class="registerbtn">Click Here!</button>
+
+    <script type="text/javascript">
+      // function getOption() {
+      //   selectElement = document.querySelector('#select1');
+      //   output = selectElement.value;
+      //   document.querySelector('.output').textContent = output;
+      // }
+
+      function myr1() {
+        var x1 = document.getElementById("mySelect11");
+        var i1 = x1.selectedIndex;
+        var rr1 = x1.options[i1].text;
+        console.log(rr1);
+        var txt1 = document.getElementById("ttid1").value
+          = rr1
+      }
+
+      function myr2() {
+        var x2 = document.getElementById("mySelect22");
+        var i2 = x2.selectedIndex;
+        var rr2 = x2.options[i2].text;
+        console.log(rr2);
+        var txt2 = document.getElementById("ttid2").value
+          = rr2
+      }
+
+      function myr3() {
+        var x3 = document.getElementById("mySelect33");
+        var i3 = x3.selectedIndex;
+        var rr3 = x3.options[i3].text;
+        console.log(rr3);
+        var txt3 = document.getElementById("ttid3").value
+          = rr3
+          const name = document.getElementById('ttid3').value;
+    console.log("local stroage = "+name);
+    localStorage.setItem("NAME", name);
+    
+        }
+
+   
+
+    </script>
+
+
+
+      <input type="text" name="n11" placeholder="1st numm" class="pp" id="ttid1" style="opacity: 0;"><br /> <br />
+      <input type="text" name="n22" placeholder="2nd numm" id="ttid2" style="opacity: 0;"> <br /><br />
+      <input type="text" name="n33" placeholder="2nd numm" id="ttid3" style="opacity: 0;"> <br /><br />
+      
+      <hr>
+
+      <!-- <button type="submit" class="registerbtn">Register</button> -->
+    </div>
+
+    <div class="container signin">
+      <p>Already have an account? <a href="#">Sign in</a>.</p>
+    </div>
+
+
+    
+  </form>
+
+
+  <style>
+    body {font-family: Arial, Helvetica, sans-serif;}
+    
+    /* Full-width input fields */
+    input[type=text], input[type=password] {
+      width: 100%;
+      padding: 12px 20px;
+      margin: 8px 0;
+      display: inline-block;
+      border: 1px solid #ccc;
+      box-sizing: border-box;
+    }
+    
+    /* Set a style for all buttons */
+    button {
+      background-color: #04AA6D;
+      color: white;
+      padding: 14px 20px;
+      margin: 8px 0;
+      border: none;
+      cursor: pointer;
+      width: 100%;
+    }
+    
+    button:hover {
+      opacity: 0.8;
+    }
+    
+    /* Extra styles for the cancel button */
+    .cancelbtn {
+      width: auto;
+      padding: 10px 18px;
+      background-color: #f44336;
+    }
+    
+    /* Center the image and position the close button */
+    .imgcontainer {
+      text-align: center;
+      margin: 24px 0 12px 0;
+      position: relative;
+    }
+    
+    img.avatar {
+      width: 40%;
+      border-radius: 50%;
+    }
+    
+    .container {
+      padding: 16px;
+    }
+    
+    span.psw {
+      float: right;
+      padding-top: 16px;
+    }
+    
+    /* The Modal (background) */
+    .modal {
+      display: none; /* Hidden by default */
+      position: fixed; /* Stay in place */
+      z-index: 1; /* Sit on top */
+      left: 0;
+      top: 0;
+      width: 100%; /* Full width */
+      height: 100%; /* Full height */
+      overflow: auto; /* Enable scroll if needed */
+      background-color: rgb(0,0,0); /* Fallback color */
+      background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+      padding-top: 60px;
+    }
+    
+    /* Modal Content/Box */
+    .modal-content {
+      background-color: #fefefe;
+      margin: 5% auto 15% auto; /* 5% from the top, 15% from the bottom and centered */
+      border: 1px solid #888;
+      width: 80%; /* Could be more or less, depending on screen size */
+    }
+    
+    /* The Close Button (x) */
+    .close {
+      position: absolute;
+      right: 25px;
+      top: 0;
+      color: #000;
+      font-size: 35px;
+      font-weight: bold;
+    }
+    
+    .close:hover,
+    .close:focus {
+      color: red;
+      cursor: pointer;
+    }
+    
+    /* Add Zoom Animation */
+    .animate {
+      -webkit-animation: animatezoom 0.6s;
+      animation: animatezoom 0.6s
+    }
+    
+    @-webkit-keyframes animatezoom {
+      from {-webkit-transform: scale(0)} 
+      to {-webkit-transform: scale(1)}
+    }
+      
+    @keyframes animatezoom {
+      from {transform: scale(0)} 
+      to {transform: scale(1)}
+    }
+    
+    /* Change styles for span and cancel button on extra small screens */
+    @media screen and (max-width: 300px) {
+      span.psw {
+         display: block;
+         float: none;
+      }
+      .cancelbtn {
+         width: 100%;
+      }
+    }
+    </style>
+    </head>
+    <body>
+    
+    <h2>Modal Login Form</h2>
+    
+    <button onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Login</button>
+    
+    <div id="id01" class="modal">
+      
+      <form class="modal-content animate" action="/action_page.php" method="post">
+        <div class="imgcontainer">
+          <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
+          <img src="https://www.w3schools.com/howto/img_avatar2.png" alt="Avatar" class="avatar">
+        </div>
+    
+        <div class="container">
+          <label for="uname"><b>Username</b></label>
+          <input type="text" placeholder="Enter Username" name="uname" required>
+    
+          <label for="psw"><b>Password</b></label>
+          <input type="password" placeholder="Enter Password" name="psw" required>
+            
+          <button type="submit">Login</button>
+          <label>
+            <input type="checkbox" checked="checked" name="remember"> Remember me
+          </label>
+        </div>
+    
+        <div class="container" style="background-color:#f1f1f1">
+          <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
+          <span class="psw">Forgot <a href="#">password?</a></span>
+        </div>
+      </form>
+    </div>
+    
+    <script>
+    // Get the modal
+    var modal = document.getElementById('id01');
+    
+    // When the user clicks anywhere outside of the modal, close it
+    window.onclick = function(event) {
+        if (event.target == modal) {
+            modal.style.display = "none";
+        }
+    }
+    </script>
+
+
+  
+</body>
+
+</html>

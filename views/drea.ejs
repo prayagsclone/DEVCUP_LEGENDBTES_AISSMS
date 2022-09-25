@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: black;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+/* Add padding to containers */
+.container {
+  padding: 16px;
+  background-color: white;
+}
+
+/* Full-width input fields */
+input[type=text], input[type=password] {
+  width: 100%;
+  padding: 15px;
+  margin: 5px 0 22px 0;
+  display: inline-block;
+  border: none;
+  background: #f1f1f1;
+}
+
+input[type=text]:focus, input[type=password]:focus {
+  background-color: #ddd;
+  outline: none;
+}
+
+/* Overwrite default styles of hr */
+hr {
+  border: 1px solid #f1f1f1;
+  margin-bottom: 25px;
+}
+
+/* Set a style for the submit button */
+.registerbtn {
+  background-color: #04AA6D;
+  color: white;
+  padding: 16px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  opacity: 0.9;
+}
+
+.registerbtn:hover {
+  opacity: 1;
+}
+
+/* Add a blue text color to links */
+a {
+  color: dodgerblue;
+}
+
+/* Set a grey background color and center the text of the "sign in" section */
+.signin {
+  background-color: #f1f1f1;
+  text-align: center;
+}
+</style>
+</head>
+<body>
+
+  <form action="/dreaonpg" method="post">
+
+
+    <h1 style="color: green">
+      SIH PROJECT
+    </h1>
+<br/>
+    <select id="mySelect11" onchange="myr1()" value="state" style="font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;font-size: 20px;margin-left:35%;width: 30%;">
+      <option>delhi</option>
+      <option>Maharashtra</option>
+      <option>delhi</option>
+      <option>odisha</option>
+    </select>
+<br/><br/><br/>
+    <select id="mySelect22" onchange="myr2()" style="font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;font-size: 20px;margin-left:35%;width: 30%;">
+      <option>Mumbai</option>
+      <option>Pune</option>
+      <option>Mumbai</option>
+      <option>Latur</option>
+    </select>
+<br/><br/><br/>
+    <select id="mySelect33" onchange="myr3()" style="font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;font-size: 20px;margin-left:35%;width: 30%;">
+      <option>karadi</option>
+      <option>kothrud</option>
+      <option>viman nagar</option>
+      <option>Berlin</option>
+
+    </select>
+
+<br/><br/><br/>
+
+    <button onclick="myr" class="registerbtn">Click Here!</button>
+
+    <script type="text/javascript">
+      // function getOption() {
+      //   selectElement = document.querySelector('#select1');
+      //   output = selectElement.value;
+      //   document.querySelector('.output').textContent = output;
+      // }
+
+      function myr1() {
+        var x1 = document.getElementById("mySelect11");
+        var i1 = x1.selectedIndex;
+        var rr1 = x1.options[i1].text;
+        console.log(rr1);
+        var txt1 = document.getElementById("ttid1").value
+          = rr1
+      }
+
+      function myr2() {
+        var x2 = document.getElementById("mySelect22");
+        var i2 = x2.selectedIndex;
+        var rr2 = x2.options[i2].text;
+        console.log(rr2);
+        var txt2 = document.getElementById("ttid2").value
+          = rr2
+      }
+
+      function myr3() {
+        var x3 = document.getElementById("mySelect33");
+        var i3 = x3.selectedIndex;
+        var rr3 = x3.options[i3].text;
+        console.log(rr3);
+        var txt3 = document.getElementById("ttid3").value
+          = rr3
+      }
+    </script>
+
+
+
+      <input type="text" name="n11p" placeholder="1st numm" class="pp" id="ttid1" style="opacity: 0;"><br /> <br />
+      <input type="text" name="n22p" placeholder="2nd numm" id="ttid2" style="opacity: 0;"> <br /><br />
+      <input type="text" name="n33p" placeholder="2nd numm" id="ttid3" style="opacity: 0;"> <br /><br />
+      
+      <hr>
+
+      <!-- <button type="submit" class="registerbtn">Register</button> -->
+    </div>
+
+    <div class="container signin">
+      <p>Already have an account? <a href="#">Sign in</a>.</p>
+    </div>
+    
+  </form>
+
+    <form action="/nextpgh" method="post">  
+
+<button>nectpg gp => ()</button>
+
+  <div class="container">
+    <h1 style="font-size:30px">hcccccccccccccello</h1>
+
+    <p id="resultn"></p>
+    <h1 id="headd" style="font-size:30px">................</h1>
+   <br/>
+   <br/>
+   <p> selected State: <%= statename %> </p>
+
+   <p> selected City: <%= cityname  %> </p>
+
+   <p> selected Region: <%= regname  %> </p>
+   <input id="mapdata" style="color: green;font-size: 25px;"><br />
+
+   <br/>
+   <br/>
+   <br/>
+
+
+
+
+   <% usl.forEach( users=>{ %>
+
+    <p>mapdata =  <%= users.Map_dara %> </p>
+    <p>chartsdata = <span id="cgg"> <%= users.charts_data %> </span> </p>
+    <p>chartsdata........ = <%= users.cala_n %> </p>
+    <p>people without= people = <%= people %> </p>
+    <br/>
+    <p id="cff">people== <%= people.join(", "); %> </p>
+    <p style="color: red">chartlabel=........ = <%= users.chart_lab %> </p>
+    
+    <p>slider........ = <%= users.slider %> </p>
+    
+    
+    <p>for loop for charts data</p>
+    
+    <p>for loop ends=== <%= users.charts_data %></p>
+    
+    
+    <p id="cff1"></p>
+    
+    <% }) %>
+    <br/>
+    <p>hhhhhhhhhhhhhhhhhhhhh</p>
+
+
+    
+    <span id="mySpan1">[55, 49, 44, 24, 15]</span> <br/><br/><br/>
+<input id="demo1" style="color: red;font-size: 25px;"><br />
+<br/><br/>
+<input id="demo1nn" style="color: red;font-size: 25px;"><br />
+
+<span>demo11 ===</span>
+
+<p id="demo1p" style="color: purple;"> demo11 === </p>
+
+<p id="demo11" style="color: red;"> demo11 === </p>
+<p id="demo112" style="color: orange"> demo11 === </p>
+   
+<br/>
+   <br/>
+   <p id="demo1222" style="color: green;"> demo11 === </p> <span>< % network access--- pp158921 main__head % > </span>
+
+
+
+
+  <div class="container signin">
+    <p>_access_api < %= prayag_sh_db % >.json<a href="#"><span style="opacity: 0;">dncdn</span>///////cc-----///</a>.</p>
+
+    <canvas id="myChart" style="width:100%;max-width:600px"></canvas>
+
+<div style="float: right;padding-bottom: 250px;">
+    <p> selected State: <%= statename %> </p>
+
+   <p> selected City: <%= cityname  %> </p>
+
+   <p> selected Region: <%= regname  %> </p>
+
+   <br/>
+</div>
+  </div>
+<br/>
+
+<!-- <div id="piechart_3d" style="width: 900px; height: 500px;"></div> -->
+
+
+<br/><br/><br/><br/>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
+
+
+
+    <script>
+
+      // async() => {
+      
+var mapdata = '<% usl.forEach( users =>{ %> <%= users.Map_Data %> <% }) %>';
+document.getElementById('mapdata').value = mapdata;
+console.log("MAPDATA = "+mapdata);
+
+
+     const namenxt =  localStorage.getItem('NAME');
+     document.getElementById('resultn').innerHTML = namenxt;
+    console.log("local value 2nd pg = "+namenxt);
+
+        var lenn =  '<% usl.forEach( users =>{ %> <%= users.charts_data %> <% }) %>';
+      lenn1 = Array.from(lenn);
+        document.getElementById("demo1").value = lenn1;
+      
+        var lenn_n = '<% usl.forEach( users =>{ %> <%= users.cala_n %> <% }) %>';
+      lenn1_n = Array.from(lenn_n);
+      document.getElementById("demo1nn").value = lenn_n;
+        
+      
+      var y1 = 10;
+      var y2 = 15;
+      var y3 = 5;
+      var y4 = 20;
+      var y5 = 10;
+      
+        var yValuess =  [5,10,5,30,40];
+      var yValues =  JSON.parse(lenn);
+      // [y1, y2, y3, y4, y5];
+      // Array.from(lenn);
+      console.log("lenn mogo data = " +Array.isArray(lenn1));
+      console.log("lenn1_n mogo data*** = " +Array.isArray(lenn1_n));
+      
+      document.getElementById("demo11").innerHTML = lenn_n;
+      
+        // "<% usl.forEach( users=>{ %> <%= users.charts_data %> <% }) %>";  //static [10,50,20,30,40]
+      
+      // document.getElementById("demo1").value ;
+      
+      var xValues =   [2002, 2007, 2012, 2017];
+      xValues[4]= 2021; 
+      document.getElementById("demo1p").innerHTML  = xValues; 
+      var xValuesd = ["flood","eathq"];
+      document.getElementById("demo112").innerHTML  = xValuesd; 
+      console.log(xValuesd);
+      
+      var barColors = ["red", "green","blue","orange","brown"];
+      // var yValues = Array.from(yValues);
+      // yValues = document.getElementById("demo11").innerHTML;
+      console.log("yvaluessss = "+ typeof(yValuess));
+      
+      console.log("yvalues = "+ typeof(yValues));
+      console.log("lenn = "+ typeof(lenn1));
+      console.log("lenn1_n ***** = "+ typeof(lenn1_n));
+      
+      console.log(JSON.parse(lenn));
+      console.log(lenn_n);
+      console.log(lenn1_n[1]);
+      
+      // console.log(JSON.parse(lenn_n));
+      
+      new Chart("myChart", {
+        type: "bar",
+      
+        data: {
+          labels: xValues,
+          datasets: [{
+            // backgroundColor: barColors,
+      
+            backgroundColor: [
+                'rgba(255, 26, 104, 0.2)',
+                'rgba(54, 162, 235, 0.2)',
+                'rgba(255, 206, 86, 0.2)',
+                'rgba(75, 192, 192, 0.2)',
+                'rgba(153, 102, 255, 0.2)',
+                'rgba(255, 159, 64, 0.2)',
+                'rgba(0, 0, 0, 0.2)'
+              ],
+              borderColor: [
+                'rgba(255, 26, 104, 1)',
+                'rgba(54, 162, 235, 1)',
+                'rgba(255, 206, 86, 1)',
+                'rgba(75, 192, 192, 1)',
+                'rgba(153, 102, 255, 1)',
+                'rgba(255, 159, 64, 1)',
+                'rgba(0, 0, 0, 1)'
+              ],
+              borderWidth:1.5,
+            data: yValues
+          }]
+        },
+        reponsive: true,
+        options: {
+          legend: {display: false},
+          title: {
+            display: true,
+            text: "Year WISE distraction Natural Calamities"
+          },
+          scales: {
+          yAxes: [{
+            ticks: {
+              min: 0,
+              max: (Math.max(...yValues))*1.2
+              
+            }
+          }]
+        }
+        }
+      });
+      
+      </script>
+
+
+</form>
+
+
+
+</body>
+</html>

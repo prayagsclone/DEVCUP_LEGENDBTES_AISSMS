@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: black;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+/* Add padding to containers */
+.container {
+  padding: 16px;
+  background-color: white;
+}
+
+/* Full-width input fields */
+input[type=text], input[type=password] {
+  width: 100%;
+  padding: 15px;
+  margin: 5px 0 22px 0;
+  display: inline-block;
+  border: none;
+  background: #f1f1f1;
+}
+
+input[type=text]:focus, input[type=password]:focus {
+  background-color: #ddd;
+  outline: none;
+}
+
+/* Overwrite default styles of hr */
+hr {
+  border: 1px solid #f1f1f1;
+  margin-bottom: 25px;
+}
+
+/* Set a style for the submit button */
+.registerbtn {
+  background-color: #04AA6D;
+  color: white;
+  padding: 16px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  opacity: 0.9;
+}
+
+.registerbtn:hover {
+  opacity: 1;
+}
+
+/* Add a blue text color to links */
+a {
+  color: dodgerblue;
+}
+
+/* Set a grey background color and center the text of the "sign in" section */
+.signin {
+  background-color: #f1f1f1;
+  text-align: center;
+}
+</style>
+</head>
+<body>
+
+    <form action="/rea.html" method="post">
+  <div class="container">
+    <h1 style="font-size:30px">hcccccccccccccello</h1>
+    <h1 id="headd" style="font-size:30px">................</h1>
+   <br/>
+   <br/>
+   <p> selected State: <%= statename %> </p>
+
+   <p> selected City: <%= cityname  %> </p>
+
+   <p> selected Region: <%= regname  %> </p>
+
+   <br/>
+   <br/>
+   <br/>
+
+<% usl.forEach( users=>{ %>
+<p>mapdata =  <%= users.map_data %> </p>
+<p>chartsdata = <span id="cgg"> <%= users.charts_data %> </span> </p>
+<p>chartsdata........ = <%= users.cala_n %> </p>
+<p>people without= people = <%= people %> </p>
+<br/>
+<p id="cff">people== <%= people.join(", "); %> </p>
+<p style="color: red">chartlabel=........ = <%= users.chart_lab %> </p>
+
+
+
+<p>for loop for charts data</p>
+
+<p>for loop ends=== <%= users.charts_data %></p>
+
+
+<p id="cff1"></p>
+
+<% }) %>
+<br/>
+<p>hhhhhhhhhhhhhhhhhhhhh</p>
+
+
+
+<span id="mySpan1">[55, 49, 44, 24, 15]</span> <br/><br/><br/>
+<input id="demo1" style="color: red;font-size: 25px;"><br />
+<span>demo11 ===</span>
+<p id="demo11" style="color: red;"> demo11 === </p>
+   <br/>
+   <br/>
+
+
+
+
+  <div class="container signin">
+    <p>charts<a href="#">///////ccccccccccccccccccccc///</a>.</p>
+
+    <canvas id="myChart" style="width:100%;max-width:600px"></canvas>
+
+  </div>
+<br/>
+
+<!-- <div id="piechart_3d" style="width: 900px; height: 500px;"></div> -->
+
+
+<br/><br/><br/><br/>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
+
+
+
+ <script>
+
+// async() => {
+
+  var lenn = '<% usl.forEach( users =>{ %> <%= users.charts_data %> <% }) %>';
+lenn1 = Array.from(lenn);
+  document.getElementById("demo1").value = lenn1;
+
+
+var y1 = 10;
+var y2 = 15;
+var y3 = 5;
+var y4 = 20;
+var y5 = 10;
+
+  var yValuess =  [5,10,5,30,40];
+var yValues =  JSON.parse(lenn);
+// [y1, y2, y3, y4, y5];
+// Array.from(lenn);
+console.log("lenn mogo data = " +Array.isArray(lenn1));
+document.getElementById("demo11").innerHTML = lenn1;
+
+  // "<% usl.forEach( users=>{ %> <%= users.charts_data %> <% }) %>";  //static [10,50,20,30,40]
+
+// document.getElementById("demo1").value ;
+
+var xValues = ["Italy", "France", "Spain", "USA", "Argentina"];
+var barColors = ["red", "green","blue","orange","brown"];
+// var yValues = Array.from(yValues);
+// yValues = document.getElementById("demo11").innerHTML;
+console.log("yvaluessss = "+ typeof(yValuess));
+
+console.log("yvalues = "+ typeof(yValues));
+console.log("lenn = "+ typeof(lenn1));
+console.log(JSON.parse(lenn));
+
+new Chart("myChart", {
+  type: "bar",
+  data: {
+    labels: xValues,
+    datasets: [{
+      backgroundColor: barColors,
+      data: yValues
+    }]
+  },
+  options: {
+    legend: {display: false},
+    title: {
+      display: true,
+      text: "World Wine Production 2018"
+    }
+  }
+});
+
+</script>
+
+
+
+<!-- <script >
+  
+  var ctx = document.getElementById('myChart').getContext('2d');
+var labels = ['Pizza 🍕', 'Taco 🌮', 'Hot Dog 🌭', 'Sushi 🍣'];
+var colorHex = ['#FB3640', '#EFCA08', '#43AA8B', '#253D5B'];
+var xx1 = [3022,202,1022,40222];
+var myChart = new Chart(ctx, {
+  type: 'pie',
+  data: {
+    datasets: [{
+      data: xx,
+      backgroundColor: colorHex
+    }],
+    labels: labels
+  },
+  options: {
+    responsive: true,
+    legend: {
+      position: 'bottom'
+    },
+    plugins: {
+      datalabels: {
+        color: '#fff',
+        anchor: 'end',
+        align: 'start',
+        offset: -10,
+        borderWidth: 2,
+        borderColor: '#fff',
+        borderRadius: 25,
+        backgroundColor: (context) => {
+          return context.dataset.backgroundColor;
+        },
+        font: {
+          weight: 'bold',
+          size: '10'
+        },
+        formatter: (value) => {
+          return value + ' %';
+        }
+      }
+    }
+  }
+}) -->
+
+</script>
+
+<!-- <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script>
+      var objvar = ['<% usl.forEach( users =>{ %> <%= users.charts_data %> <% }) %>'];
+      document.getElementById("demo11").innerHTML = objvar;
+      google.charts.load("current", {packages:["corechart"]});
+      google.charts.setOnLoadCallback(drawChart);
+      function drawChart() {
+        var data = google.visualization.arrayToDataTable([
+          ['Task', 'Hours per Day'],
+          ['W', 60],
+          ['E', 40]
+        ]);
+
+        var options = {
+          title: 'My Daily Activities',
+          is3D: true,
+        };
+
+        var chart = new google.visualization.PieChart(document.getElementById('piechart_3d'));
+        chart.draw(data, options);
+      }
+    </script>
+  
+    <div id="piechart_3d" style="width: 900px; height: 500px;"></div> -->
+
+</form>
+
+</body>
+</html>
