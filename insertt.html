@@ -1,21 +1,174 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+
 <body>
     <h1>inserting in database</h1>
-    <form method="post" action="/insertt.html" >
-    <input type="text" name="is11" placeholder="1st numm" class="ipp" id="ittid1" style="opacity: 1;"><br /> <br />
-      <input type="text" name="ic1" placeholder="2nd numm" id="ittid2" style="opacity: 1;"> <br /><br />
-      <!-- <input type="text" name="n33" placeholder="2nd numm" id="ttid3" style="opacity: 0;"> <br /><br /> -->
-      <input type="text" name="ir11" placeholder="2nd numm" id="ittid2" style="opacity: 1;"> <br /><br />
-      <input type="text" name="iccd" placeholder="2nd numm" id="ittid2" style="opacity: 1;"> <br /><br />
+    <form method="post" action="/insertt.html">
+        <input type="text" name="is11" placeholder="1st numm" class="ipp" id="ittid1" style="opacity: 1;"><br /> <br />
+        <input type="text" name="ic1" placeholder="2nd numm" id="ittid2" style="opacity: 1;"> <br /><br />
+        <!-- <input type="text" name="n33" placeholder="2nd numm" id="ttid3" style="opacity: 0;"> <br /><br /> -->
+        <input type="text" name="ir11" placeholder="2nd numm" id="ittid2" style="opacity: 1;"> <br /><br />
+        <input type="text" name="iccd" placeholder="2nd numm" id="ittid2" style="opacity: 1;"> <br /><br />
 
-      <button>add data</button>
-</form>
+        <button>add data</button>
+    </form>
+
+
+
+    <!---->
+
+    <script>
+        document.getElementById('txtInput').value = "this is a bar chart. here we can see on y-axes total distraction and on x-axes total years data in the region. highest bar is of 2012 year with value 2000 points scale and least 2022 of 800 points scale";
+        var txtInput = document.querySelector('#txtInput');
+        var voiceList = document.querySelector('#voiceList');
+        var btnSpeak = document.querySelector('#btnSpeak');
+        var synth = window.speechSynthesis;
+        var voices = [];
+
+        PopulateVoices();
+        if (speechSynthesis !== undefined) {
+            speechSynthesis.onvoiceschanged = PopulateVoices;
+        }
+
+        btnSpeak.addEventListener('click', () => {
+            var toSpeak = new SpeechSynthesisUtterance(txtInput.value);
+            var selectedVoiceName = voiceList.selectedOptions[0].getAttribute('data-name');
+            voices.forEach((voice) => {
+                if (voice.name === selectedVoiceName) {
+                    toSpeak.voice = voice;
+                    console.log(selectedVoiceName);
+                }
+            });
+            synth.speak(toSpeak);
+        });
+
+        function PopulateVoices() {
+            voices = synth.getVoices();
+            var selectedIndex = voiceList.selectedIndex < 0 ? 0 : voiceList.selectedIndex;
+            voiceList.innerHTML = '';
+            voices.forEach((voice) => {
+                var listItem = document.createElement('option');
+                listItem.textContent = voice.name;
+                listItem.setAttribute('data-lang', voice.lang);
+                listItem.setAttribute('data-name', voice.name);
+                voiceList.appendChild(listItem);
+            });
+
+            voiceList.selectedIndex = selectedIndex;
+        }
+    </script>
+
+    <button onclick="updatechart()">hello</button>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script
+        src="https://cdnjs.cloudflare.com/ajax/libs/chartjs-plugin-datalabels/2.1.0/chartjs-plugin-datalabels.min.js"></script>
+    <script>
+
+        updatechart();
+
+        function updatechart() {
+            async function fetchJSON() {
+                const url = 'https://raw.githubusercontent.com/Mrprayag077/SIH_proj/main/pp.json';
+                const response = await fetch(url);
+
+                const datapoints = await response.json();
+                console.log(datapoints);
+                return datapoints;
+            };
+
+
+            fetchJSON().then(datapoints => {
+                const year = datapoints.ppr[0].pp1.map(function (index) {
+                    return index.year;
+                });
+
+                console.log(year);
+                myChart.config.data.labels = year;
+                myChart.update();
+
+            });
+
+
+
+
+            fetchJSON().then(datapoints => {
+                const value = datapoints.ppr[0].pp1.map(function (index) {
+                    return index.value;
+                });
+
+                console.log(value);
+                myChart.config.data.datasets[0].data = value;
+                myChart.update();
+
+            });
+
+
+        };
+
+        // setup 
+        const data = {
+            labels: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
+            datasets: [{
+                label: 'Weekly Sales',
+                data: [18, 12, 6, 9, 12, 3, 9],
+                backgroundColor: [
+                    'rgba(255, 26, 104, 0.2)',
+                    'rgba(54, 162, 235, 0.2)',
+                    'rgba(255, 206, 86, 0.2)',
+                    'rgba(75, 192, 192, 0.2)',
+                    'rgba(153, 102, 255, 0.2)',
+                    'rgba(255, 159, 64, 0.2)',
+                    'rgba(0, 0, 0, 0.2)'
+                ],
+                borderColor: [
+                    'rgba(255, 26, 104, 1)',
+                    'rgba(54, 162, 235, 1)',
+                    'rgba(255, 206, 86, 1)',
+                    'rgba(75, 192, 192, 1)',
+                    'rgba(153, 102, 255, 1)',
+                    'rgba(255, 159, 64, 1)',
+                    'rgba(0, 0, 0, 1)'
+                ],
+                borderWidth: 1
+            }]
+        };
+
+        // config 
+        const config = {
+            type: 'bar',
+            data,
+            options: {
+
+                plugins: {
+                    tooltip: {
+                        enabled: false
+                    }
+                },
+
+                datalabels: {
+                    formatter: (value, context) => {
+                        return 'hello';
+                    }
+                },
+                plugins: [ChartDataLabels]
+            }
+        };
+
+        // render init block
+        const myChart = new Chart(
+            document.getElementById('myChart'),
+            config
+        );
+    </script>
+
+    <!---->
 </body>
+
 </html>
