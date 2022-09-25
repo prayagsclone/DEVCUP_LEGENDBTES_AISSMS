@@ -26,9 +26,9 @@ we had chart pg new with differnet charts plus added data transfer from json fil
 -> SPEAK BUTTON TO MAKE PEOPLE UNDERSTAND CHARTS INFO. 
 
  ------------------------------
- again commited [8.31]
+ again commited [8.31 PM]
  improved speak lang code and added % to pie chart section and created table code with json data  ~prayag 8.29
  
- 4TH COMMIT [11:16]
+ 4TH COMMIT [11:16 PM]
  added the python model for map using python and csv file TO PREDICT FLOODS
  
