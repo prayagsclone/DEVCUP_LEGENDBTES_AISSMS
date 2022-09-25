@@ -16,11 +16,11 @@ CREATED HOME AND DREA PAGE
 -> DROP DOWN ADDED AND TOO CHARTS DATA SHOWING PROPERLY :)
 
 
-2nd COMMIT:-
+2nd COMMIT:- [6:13 PM]
 GLOBE CODE ADDED 6:13 PM HTML/JS PUBLIC CODE
 
 
-3RD COMMIT:-
+3RD COMMIT:- [8:15]
 we had chart pg new with differnet charts plus added data transfer from json file online and added a speaking buttin to help diabled people and undertsnad easily the charts data using voice function
 -> DIFFERNET CHARTS
 -> SPEAK BUTTON TO MAKE PEOPLE UNDERSTAND CHARTS INFO. 
