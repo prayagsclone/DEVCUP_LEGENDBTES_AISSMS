@@ -40,3 +40,8 @@ we had chart pg new with differnet charts plus added data transfer from json fil
  created new pages (dashboard ,charts) updated the home,table page and added some snippet of js for slider and globe functions and add imgs
  -> NEW PAGES HOME,DASH_HOME,TABLES, UPADTED CHARTS,CHARTS,CLIENTS- JS 
  -> ADDDED NEW IMAGES 
+ 
+ 6TH COMMIT [4:49 PM]
+ added module of flood predication using python and updated the indext html file with serach functionalitY
+ ->FLOOD PREDICATION 
+ -> SEARCH FUNCTION
