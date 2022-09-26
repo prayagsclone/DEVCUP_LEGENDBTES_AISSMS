@@ -31,4 +31,8 @@ we had chart pg new with differnet charts plus added data transfer from json fil
  
  4TH COMMIT [11:16 PM]
  added the python model for map using python and csv file TO PREDICT FLOODS
+ --------------------------------------
+ AGAIN COMMITED  [10:32 AM]
+ added eq py model for visulization of eq in differnet states of india using bar strct and with csv data from github
+ -> EARTHQUAKE MODEL
  
