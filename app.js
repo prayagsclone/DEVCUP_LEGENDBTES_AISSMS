@@ -113,6 +113,98 @@ app.listen(6000, function (req, res) {
 
 
 
+app.post("/chartsjsp", function (req, res) {
 
+    //  res.send("jfffkmek");
+    var r11homi = String(req.body.homireg);
+    //input box with github link
+
+    User.find({ "reg_name": r11homi }, function (err, users) {
+
+        res.render("charts", {
+            regname: r11homi,
+            usl: users
+
+        });
+
+    });
+
+});
+
+
+
+app.post("/chtohoml", function (req, res) {
+
+    //  res.send("jfffkmek");
+    var r11ch = String(req.body.chreg);
+    console.log(r11ch);
+
+    // res.send("the sum is"+`<br/><br />email:${s11}<br />password:${c11}<br />`);
+    User.find({ "reg_name": r11ch }, function (err, users) {
+
+        res.render("dash_home", {
+
+            people: [55, 49, 44, 24, 15],
+            regname: r11ch,
+            usl: users
+
+        });
+
+
+
+        // if (err) console.warn(err + "error in user function");
+        // console.warn(users);
+    });
+
+
+});
+
+
+
+
+app.post("/tables", function (req, res) {
+
+    //  res.send("jfffkmek");
+    var r11homit = String(req.body.homiregt);
+    //input box with github link
+
+    User.find({ "reg_name": r11homit }, function (err, users) {
+
+        res.render("tables", {
+            regname: r11homit,
+            usl: users
+
+        });
+
+    });
+
+});
+
+
+app.post("/tbtohoml", function (req, res) {
+
+    //  res.send("jfffkmek");
+    var r11tb = String(req.body.tbreg);
+    console.log(r11tb);
+
+    // res.send("the sum is"+`<br/><br />email:${s11}<br />password:${c11}<br />`);
+    User.find({ "reg_name": r11tb }, function (err, users) {
+
+        res.render("dash_home", {
+
+            people: [55, 49, 44, 24, 15],
+            regname: r11tb,
+            usl: users
+
+        });
+
+
+
+        // if (err) console.warn(err + "error in user function");
+        // console.warn(users);
+    });
+
+
+});
 
 
