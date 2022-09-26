@@ -22,15 +22,4 @@ layers=pdk.Layer('HexagonLayer',
     extruded=True,                 
     coverage=1)
 
-#view Port Location
-view_state=pdk.ViewState(longitude=78.348516,
-    latitude=22.824289,
-    zoom=6,
-    min_zoom=1,
-    max_zoom=15,
-    pitch=40.5,
-    bearing=-27.36)
-
-# Render
-r = pdk.Deck(layers=[layers], initial_view_state=view_state)
-st.write(r)
+#view Port rtemp deletions 
