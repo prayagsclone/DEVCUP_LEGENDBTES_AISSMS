@@ -45,3 +45,10 @@ we had chart pg new with differnet charts plus added data transfer from json fil
  added module of flood predication using python and updated the indext html file with serach functionalitY
  ->FLOOD PREDICATION 
  -> SEARCH FUNCTION
+
+7TH COMMIT [12:18 AM]
+added datapoints on map for
+earthq and flood using js with different location of india and working of drop down of user selection and data transfer flow properly ~prayag 12:18 AM
+-> MARKERS ON MAP
+-> DROP DOWN WORKING PROPERLY
+-> PAGE SWITCHING CODE UPADTED 
