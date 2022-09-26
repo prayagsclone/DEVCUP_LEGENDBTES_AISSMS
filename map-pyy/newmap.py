@@ -63,10 +63,14 @@ layer = pdk.Layer(
     get_line_color=[0, 0, 0],
     
 )
+
+#modified 
 tooltip = {
     "html": "<b>{district},{severity}</b>",
-    "style": {"background": "grey", "color": "white", "font-family": '"Helvetica Neue", Arial', "z-index": "10000"},
+    "style": {"background": "blue", "color": "white","fint-size": "25", "font-family": '"Helvetica Neue", Arial', "z-index": "10000"},
 }
+
+
 # Set the viewport location
 
 st.header('3D Visualization')
