@@ -36,3 +36,7 @@ we had chart pg new with differnet charts plus added data transfer from json fil
  added eq py model for visulization of eq in differnet states of india using bar strct and with csv data from github
  -> EARTHQUAKE MODEL
  
+ 5THH COMMIT [12:29 AM]
+ created new pages (dashboard ,charts) updated the home,table page and added some snippet of js for slider and globe functions and add imgs
+ -> NEW PAGES HOME,DASH_HOME,TABLES, UPADTED CHARTS,CHARTS,CLIENTS- JS 
+ -> ADDDED NEW IMAGES 
